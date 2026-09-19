@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kĩ Sư Nông Học Lê Hoàng Phúc | Portfolio</title>
+<meta name="description" content="Portfolio của Lê Hoàng Phúc — Kĩ Sư Nông Học. Nghiên cứu khoa học, khởi nghiệp nông nghiệp, kỹ năng và kinh nghiệm." />
+<meta property="og:title" content="Kĩ Sư Nông Học Lê Hoàng Phúc | Portfolio" />
+<meta property="og:description" content="Portfolio song ngữ VI/EN — Nông học, nghiên cứu cây dược liệu, khởi nghiệp." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================================
+   styles.css — Portfolio Lê Hoàng Phúc
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, p, ul, ol, li, figure, blockquote { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+a { color: inherit; }
+
+:root {
+  --color-primary: #1a56db;
+  --color-primary-dark: #123a99;
+  --color-primary-light: #e8f0fe;
+  --color-secondary: #12a656;
+  --color-secondary-light: #e5f8ee;
+  --color-accent: #ff7a1a;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f8fc;
+  --color-surface: #ffffff;
+  --color-text: #12213a;
+  --muted: #6b7684;
+  --color-border: #dfe6ef;
+  --color-shadow: rgba(18, 33, 58, 0.08);
+  --color-focus: #ff7a1a;
+  --font-base: "Be Vietnam Pro", "Inter", "Roboto", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --fs-vi-base: 1rem;
+  --fs-vi-lg: 1.125rem;
+  --fs-en: 0.875rem;
+  --fs-heading: 1.375rem;
+  --fs-hero-name: clamp(1.5rem, 5vw, 2.25rem);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --radius-sm: 8px; --radius-md: 14px; --radius-lg: 22px;
+  --shadow-sm: 0 2px 8px var(--color-shadow);
+  --shadow-md: 0 6px 20px var(--color-shadow);
+  --tap-min: 44px;
+  --hex-w: clamp(96px, 27vw, 180px);
+  --hex-h: calc(var(--hex-w) * 1.1547);
+  --hex-gap: 6px;
+  --dur-hex: 450ms;
+  --dur-panel: 400ms;
+  --ease-standard: ease-in-out;
+  --z-hive: 5; --z-hive-active: 10; --z-mini-nav: 40;
+  --z-panel: 30; --z-lightbox: 100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--fs-vi-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.text-vi { display: block; font-weight: 600; color: var(--color-text); }
+.text-en { display: block; font-weight: 400; font-size: var(--fs-en); color: var(--muted); margin-top: 2px; }
+
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-sm); }
+
+.skip-link {
+  position: absolute; left: var(--space-2); top: -100px;
+  background: var(--color-primary); color: #fff;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm); z-index: 999;
+  transition: top 200ms var(--ease-standard); font-weight: 600;
+}
+.skip-link:focus { top: var(--space-2); }
+
+/* HERO */
+.hero {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--space-7) var(--space-4) var(--space-5); gap: var(--space-5);
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-bg) 65%);
+}
+.hero__portrait-img {
+  width: 240px; height: 240px; max-width: 60vw; max-height: 60vw;
+  object-fit: cover; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); background: var(--color-bg-alt);
+  border: 3px solid #fff;
+}
+.hero__intro { max-width: 640px; }
+.hero__name { font-size: var(--fs-hero-name); }
+.hero__name .text-vi { color: var(--color-primary); font-weight: 700; font-size: var(--fs-hero-name); }
+.hero__name .text-en { font-size: 1rem; }
+.hero__motto { margin-top: var(--space-3); }
+.hero__motto .text-vi { font-size: var(--fs-vi-lg); color: var(--color-secondary); font-weight: 600; }
+.hero__story {
+  max-width: 640px; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-5); box-shadow: var(--shadow-sm); text-align: left;
+}
+.hero__story .text-vi { font-weight: 400; font-size: var(--fs-vi-base); }
+.hero__story .text-en { margin-top: var(--space-3); }
+
+@media (min-width: 768px) {
+  .hero { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; text-align: left; padding: var(--space-8) var(--space-6); }
+  .hero__portrait { order: 1; }
+  .hero__intro { order: 2; text-align: left; }
+  .hero__story { order: 3; flex-basis: 100%; margin-top: var(--space-5); }
+}
+
+/* HIVE */
+.hive { display: flex; justify-content: center; padding: var(--space-6) var(--space-4) var(--space-8); }
+.hive__list {
+  position: relative;
+  width: calc(var(--hex-w) * 3 + var(--hex-gap) * 2);
+  max-width: 100%;
+  height: calc(var(--hex-h) * 2.5);
+}
+.hive__item { position: absolute; left: 50%; top: 50%; width: var(--hex-w); height: var(--hex-h); transform: translate(-50%, -50%); }
+.hive__item[data-position="center"] { z-index: calc(var(--z-hive) + 1); }
+.hive__item[data-position="top-left"] { transform: translate(calc(-50% - (var(--hex-w) / 2) - var(--hex-gap)), calc(-50% - (0.75 * var(--hex-h)) - var(--hex-gap))); }
+.hive__item[data-position="top-right"] { transform: translate(calc(-50% + (var(--hex-w) / 2) + var(--hex-gap)), calc(-50% - (0.75 * var(--hex-h)) - var(--hex-gap))); }
+.hive__item[data-position="left"] { transform: translate(calc(-50% - var(--hex-w) - var(--hex-gap) * 2), -50%); }
+.hive__item[data-position="right"] { transform: translate(calc(-50% + var(--hex-w) + var(--hex-gap) * 2), -50%); }
+.hive__item[data-position="bottom-left"] { transform: translate(calc(-50% - (var(--hex-w) / 2) - var(--hex-gap)), calc(-50% + (0.75 * var(--hex-h)) + var(--hex-gap))); }
+.hive__item[data-position="bottom-right"] { transform: translate(calc(-50% + (var(--hex-w) / 2) + var(--hex-gap)), calc(-50% + (0.75 * var(--hex-h)) + var(--hex-gap))); }
+
+.hive__cell {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-1); padding: var(--space-2); text-align: center;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff; transform: scale(1); opacity: 1;
+  transition: transform var(--dur-hex) var(--ease-standard), opacity var(--dur-hex) var(--ease-standard), filter var(--dur-hex) var(--ease-standard);
+  min-width: var(--tap-min); min-height: var(--tap-min);
+}
+.hive__cell--center { background: linear-gradient(160deg, var(--color-secondary) 0%, #0c7a3d 100%); }
+.hive__cell:hover, .hive__cell:focus-visible { filter: brightness(1.08); }
+.hive__icon {
+  width: 28px; height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.hive__label .text-vi { color: #fff; font-size: 0.9rem; line-height: 1.2; }
+.hive__label .text-en { color: rgba(255, 255, 255, 0.78); font-size: 0.7rem; }
+
+.hive__cell[aria-current="true"] { transform: scale(1.15); z-index: var(--z-hive-active); filter: brightness(1.12); }
+.hive__item:not(:has(.hive__cell[aria-current="true"])) .hive__cell { transform: scale(0.8); opacity: 0.55; }
+.hive[data-active="true"] { display: none; }
+
+/* HIVE MINI */
+.hive-mini {
+  position: sticky; top: 0; z-index: var(--z-mini-nav);
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+.hive-mini[hidden] { display: none; }
+.hive-mini__home {
+  flex-shrink: 0; min-height: var(--tap-min);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-light); color: var(--color-primary);
+}
+.hive-mini__home .text-vi, .hive-mini__home .text-en { color: inherit; display: inline; font-size: 0.85rem; }
+.hive-mini__home .text-en { margin-left: var(--space-1); font-size: 0.7rem; color: var(--color-primary-dark); }
+.hive-mini__list { display: flex; gap: var(--space-2); flex-shrink: 0; }
+.hive-mini__cell {
+  width: 34px; height: 34px; min-width: var(--tap-min); min-height: var(--tap-min);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  transform: scale(0.85); opacity: 0.6;
+  transition: transform var(--dur-hex) var(--ease-standard), opacity var(--dur-hex) var(--ease-standard), background var(--dur-hex) var(--ease-standard);
+}
+.hive-mini__icon { width: 14px; height: 14px; border-radius: 50%; background: var(--color-primary); }
+.hive-mini__cell[aria-current="true"] { transform: scale(1.15); opacity: 1; background: var(--color-primary); border-color: var(--color-primary-dark); }
+.hive-mini__cell[aria-current="true"] .hive-mini__icon { background: #fff; }
+
+/* PANELS */
+main#main { display: block; }
+.panel { animation: panel-fade-in var(--dur-panel) var(--ease-standard); padding: var(--space-5) var(--space-4) var(--space-8); max-width: 960px; margin: 0 auto; }
+.panel[hidden] { display: none; }
+@keyframes panel-fade-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.panel__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-5); flex-wrap: wrap; }
+.panel__header h2 { font-size: var(--fs-heading); color: var(--color-primary); font-weight: 700; }
+.panel__header h2 .text-en { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+.panel__close {
+  min-height: var(--tap-min); padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm); background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  display: inline-flex; flex-direction: column; line-height: 1.2;
+}
+.panel__close:hover { background: var(--color-primary-light); }
+.panel__close .text-vi { font-size: 0.85rem; color: var(--color-primary); }
+.panel__close .text-en { font-size: 0.7rem; }
+.panel__body { display: flex; flex-direction: column; gap: var(--space-6); }
+
+@media (min-width: 1024px) {
+  body:has(.hive-mini:not([hidden])) main#main {
+    display: grid; grid-template-columns: 220px 1fr;
+    gap: var(--space-6); max-width: 1200px; margin: 0 auto;
+  }
+  .hive-mini {
+    position: sticky; top: var(--space-5); align-self: start;
+    flex-direction: column; height: fit-content;
+    border-right: 1px solid var(--color-border); border-bottom: none;
+    padding: var(--space-4);
+  }
+  .hive-mini__list { flex-direction: column; }
+  .panel { margin: 0; max-width: none; }
+}
+
+/* SKILLS */
+.skills-group h3 { font-size: 1.05rem; color: var(--color-secondary); font-weight: 700; margin-bottom: var(--space-3); }
+.skills-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.skills-badges .badge { background: var(--color-primary-light); color: var(--color-primary-dark); border-radius: 999px; padding: var(--space-2) var(--space-4); font-size: 0.85rem; font-weight: 600; }
+.skills-rows { display: flex; flex-direction: column; gap: var(--space-3); }
+.skills-rows .skill-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3); padding: var(--space-3) var(--space-4);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); flex-wrap: wrap;
+}
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); gap: var(--space-4); }
+.tool-grid .tool-item {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  padding: var(--space-3); background: var(--color-bg-alt); border-radius: var(--radius-sm);
+}
+.tool-grid .tool-item img { width: 40px; height: 40px; object-fit: contain; }
+.tool-grid .tool-item span { font-size: 0.75rem; color: var(--muted); text-align: center; }
+
+/* EDUCATION */
+.gpa-block {
+  display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap;
+  padding: var(--space-5);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius-md);
+}
+.gpa-block .gpa-number { font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 700; color: var(--color-primary); line-height: 1; }
+.hocbong-block, .chungchi-block { padding: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+
+/* COMMON */
+.btn-show {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1);
+  min-height: var(--tap-min); min-width: var(--tap-min);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary); color: #fff;
+  border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+  transition: background 200ms var(--ease-standard);
+}
+.btn-show:hover { background: var(--color-primary-dark); }
+.btn-show[aria-expanded="true"] { background: var(--color-bg-alt); color: var(--color-primary); border: 1px solid var(--color-primary); }
+
+.show-panel {
+  overflow: hidden; max-height: 0; opacity: 0;
+  transition: max-height var(--dur-panel) var(--ease-standard), opacity var(--dur-panel) var(--ease-standard), margin-top var(--dur-panel) var(--ease-standard);
+  margin-top: 0;
+}
+.show-panel[data-open="true"] { max-height: 2000px; opacity: 1; margin-top: var(--space-3); }
+.show-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
+@media (min-width: 640px) { .show-grid { grid-template-columns: 1fr 1fr; } }
+.show-grid figure { margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--color-bg-alt); border: 1px solid var(--color-border); cursor: zoom-in; }
+.show-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.show-grid figcaption { padding: var(--space-2) var(--space-3); font-size: 0.8rem; color: var(--muted); }
+
+.btn-external {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--tap-min); padding: var(--space-2) var(--space-4);
+  background: var(--color-accent); color: #fff;
+  border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; line-height: 1.2;
+}
+.btn-external:hover { filter: brightness(0.95); }
+.btn-external::after { content: "↗"; font-size: 1rem; }
+.btn-external .text-en { color: rgba(255, 255, 255, 0.85); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--tap-min); padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-primary); color: var(--color-primary);
+  border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+}
+
+.badge { display: inline-flex; align-items: center; padding: var(--space-1) var(--space-3); border-radius: 999px; font-size: 0.75rem; font-weight: 700; background: var(--color-primary-light); color: var(--color-primary-dark); }
+.badge--award { background: #fff4e5; color: #b45309; }
+.badge--role { background: var(--color-secondary-light); color: #0c7a3d; }
+
+/* PROJECTS */
+.tabs { display: flex; gap: var(--space-2); border-bottom: 2px solid var(--color-border); margin-bottom: var(--space-5); overflow-x: auto; }
+.tabs__tab { min-height: var(--tap-min); padding: var(--space-3) var(--space-4); font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; }
+.tabs__tab[aria-selected="true"] { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.tabs__panel[hidden] { display: none; }
+.project-group { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+@media (min-width: 768px) { .project-group { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .project-group { grid-template-columns: repeat(3, 1fr); } }
+.project-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-4);
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: var(--space-3);
+  transition: box-shadow 200ms var(--ease-standard), transform 200ms var(--ease-standard);
+}
+.project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.project-card__badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.project-card__name { font-size: 1.1rem; font-weight: 700; color: var(--color-primary); }
+.project-card__metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+.project-card__metric { background: var(--color-bg-alt); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: 0.8rem; color: var(--color-text); }
+.project-card__links { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.project-card__toggle { align-self: flex-start; }
+.project-card__detail { overflow: hidden; max-height: 0; opacity: 0; transition: max-height var(--dur-panel) var(--ease-standard), opacity var(--dur-panel) var(--ease-standard); }
+.project-card__detail[data-open="true"] { max-height: 4000px; opacity: 1; }
+.project-card__detail h4 { font-size: 0.9rem; color: var(--color-secondary); font-weight: 700; margin-top: var(--space-4); margin-bottom: var(--space-2); text-transform: uppercase; letter-spacing: 0.03em; }
+.project-card__detail p { font-size: 0.9rem; color: var(--color-text); }
+.project-steps { display: flex; flex-direction: column; gap: var(--space-3); border-left: 2px solid var(--color-border); padding-left: var(--space-4); }
+.project-steps li { position: relative; font-size: 0.9rem; }
+.project-steps li::before { content: ""; position: absolute; left: calc(-1 * var(--space-4) - 5px); top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); }
+
+/* TIMELINE */
+.timeline { position: relative; display: flex; flex-direction: column; gap: var(--space-5); padding-left: var(--space-6); border-left: 3px solid var(--color-primary-light); }
+.timeline__item { position: relative; }
+.timeline__item::before { content: ""; position: absolute; left: calc(-1 * var(--space-6) - 6px); top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-primary); border: 3px solid var(--color-primary-light); }
+.timeline__year { font-size: 1.15rem; font-weight: 700; color: var(--color-primary); }
+.timeline__org { font-weight: 600; margin-top: var(--space-1); }
+.timeline__role { color: var(--muted); font-size: 0.9rem; }
+.timeline__actions { margin-top: var(--space-2); display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.timeline__note { margin-top: var(--space-5); padding: var(--space-4); background: var(--color-secondary-light); border-radius: var(--radius-sm); font-size: 0.85rem; }
+
+/* TESTIMONIALS */
+.testimonial-group h3 { color: var(--color-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: var(--space-3); margin-top: var(--space-5); }
+.testimonial-group:first-child h3 { margin-top: 0; }
+.testimonial-card {
+  position: relative; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  margin-bottom: var(--space-4); box-shadow: var(--shadow-sm);
+}
+.testimonial-card::before { content: "\201C"; position: absolute; top: 4px; left: var(--space-3); font-size: 2.5rem; color: var(--color-primary-light); font-family: Georgia, serif; line-height: 1; }
+.testimonial-card__author { font-weight: 700; color: var(--color-primary-dark); }
+.testimonial-card__role { font-size: 0.8rem; color: var(--muted); margin-bottom: var(--space-3); }
+.testimonial-card__content { font-size: 0.95rem; font-style: italic; }
+.testimonial-card__verify { margin-top: var(--space-3); font-size: 0.8rem; color: var(--muted); }
+.testimonial-card__expand { margin-top: var(--space-2); }
+
+/* ACTIVITIES */
+.hoat-dong-khac__links { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); padding-top: var(--space-5); border-top: 1px solid var(--color-border); }
+.activity-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3); padding: var(--space-3) var(--space-4);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); margin-bottom: var(--space-3); flex-wrap: wrap;
+}
+
+/* CONTACT */
+.contact-list { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
+@media (min-width: 640px) { .contact-list { grid-template-columns: repeat(2, 1fr); } }
+.contact-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4); background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  font-weight: 600; min-height: var(--tap-min); text-decoration: none;
+}
+.contact-item:hover { background: var(--color-primary-light); }
+.contact-item__icon {
+  width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary); font-weight: 700;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed; inset: 0; z-index: var(--z-lightbox);
+  background: rgba(10, 16, 28, 0.92);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: var(--space-5);
+}
+.lightbox[hidden] { display: none; }
+.lightbox__image { max-width: min(92vw, 900px); max-height: 78vh; object-fit: contain; border-radius: var(--radius-sm); }
+.lightbox__caption { color: #fff; margin-top: var(--space-3); font-size: 0.9rem; text-align: center; }
+.lightbox__close {
+  position: absolute; top: var(--space-4); right: var(--space-4);
+  width: var(--tap-min); height: var(--tap-min); border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox__close:hover { background: rgba(255, 255, 255, 0.25); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+
+<body>
+<a href="#main" class="skip-link">Bỏ qua đến nội dung chính / Skip to main content</a>
+
+<!-- ===== TRANG CHỦ ===== -->
+<section id="trang-chu" class="hero">
+  <div class="hero__portrait">
+    <img id="portrait-img" class="hero__portrait-img" alt="" />
+  </div>
+  <div class="hero__intro">
+    <h1 class="hero__name">
+      <span id="hero-name-vi" class="text-vi" lang="vi"></span>
+      <span id="hero-name-en" class="text-en" lang="en"></span>
+    </h1>
+    <p class="hero__motto">
+      <span id="hero-motto-vi" class="text-vi" lang="vi"></span>
+      <span id="hero-motto-en" class="text-en" lang="en"></span>
+    </p>
+  </div>
+  <div class="hero__story">
+    <span id="hero-story-vi" class="text-vi" lang="vi"></span>
+    <span id="hero-story-en" class="text-en" lang="en"></span>
+  </div>
+</section>
+
+<!-- ===== TỔ ONG LỚN ===== -->
+<nav id="hive-nav" class="hive" aria-label="Điều hướng chính / Main navigation">
+  <div class="hive__list">
+    <div class="hive__item" data-position="top-left">
+      <button class="hive__cell" data-target="ki-nang" aria-current="false">
+        <span class="hive__icon">🎯</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Kĩ năng</span>
+          <span class="text-en" lang="en">Skills</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="top-right">
+      <button class="hive__cell" data-target="hoc-van" aria-current="false">
+        <span class="hive__icon">🎓</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Học vấn</span>
+          <span class="text-en" lang="en">Education</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="left">
+      <button class="hive__cell" data-target="lien-he" aria-current="false">
+        <span class="hive__icon">✉</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Liên hệ</span>
+          <span class="text-en" lang="en">Contact</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="center">
+      <button class="hive__cell hive__cell--center" data-target="du-an" aria-current="false">
+        <span class="hive__icon">⭐</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Dự án nổi bật</span>
+          <span class="text-en" lang="en">Featured Projects</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="right">
+      <button class="hive__cell" data-target="kinh-nghiem" aria-current="false">
+        <span class="hive__icon">💼</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Kinh nghiệm</span>
+          <span class="text-en" lang="en">Experience</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="bottom-left">
+      <button class="hive__cell" data-target="hoat-dong-khac" aria-current="false">
+        <span class="hive__icon">🌱</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Hoạt động khác</span>
+          <span class="text-en" lang="en">Other Activities</span>
+        </span>
+      </button>
+    </div>
+    <div class="hive__item" data-position="bottom-right">
+      <button class="hive__cell" data-target="danh-gia" aria-current="false">
+        <span class="hive__icon">💬</span>
+        <span class="hive__label">
+          <span class="text-vi" lang="vi">Đánh giá</span>
+          <span class="text-en" lang="en">Feedback</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== THANH MINI (sticky) ===== -->
+<nav id="hive-mini" class="hive-mini" aria-label="Điều hướng thu nhỏ" hidden>
+  <button class="hive-mini__home" data-action="go-home">
+    <span class="text-vi" lang="vi">Trang chủ</span>
+    <span class="text-en" lang="en">Home</span>
+  </button>
+  <div class="hive-mini__list">
+    <button class="hive-mini__cell" data-target="ki-nang" aria-current="false" aria-label="Kĩ năng"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="hoc-van" aria-current="false" aria-label="Học vấn"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="du-an" aria-current="false" aria-label="Dự án"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="kinh-nghiem" aria-current="false" aria-label="Kinh nghiệm"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="danh-gia" aria-current="false" aria-label="Đánh giá"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="hoat-dong-khac" aria-current="false" aria-label="Hoạt động khác"><span class="hive-mini__icon"></span></button>
+    <button class="hive-mini__cell" data-target="lien-he" aria-current="false" aria-label="Liên hệ"><span class="hive-mini__icon"></span></button>
+  </div>
+</nav>
+
+<!-- ===== NỘI DUNG CHÍNH ===== -->
+<main id="main">
+
+  <!-- KĨ NĂNG -->
+  <section id="ki-nang" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="ki-nang-heading">
+        <span class="text-vi" lang="vi">Kĩ năng</span>
+        <span class="text-en" lang="en">Skills</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div class="skills-group">
+        <h3><span class="text-vi" lang="vi">Chuyên môn — kĩ sư cây trồng</span><span class="text-en" lang="en">Expertise — Crop Engineer</span></h3>
+        <div id="skills-chuyen-mon-list" class="skills-badges"></div>
+      </div>
+      <div class="skills-group">
+        <h3><span class="text-vi" lang="vi">Kĩ năng mềm</span><span class="text-en" lang="en">Soft Skills</span></h3>
+        <div id="skills-mem-list" class="skills-rows"></div>
+      </div>
+      <div class="skills-group">
+        <h3><span class="text-vi" lang="vi">Tool</span><span class="text-en" lang="en">Tools</span></h3>
+        <div id="skills-tool-list" class="tool-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HỌC VẤN -->
+  <section id="hoc-van" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="hoc-van-heading">
+        <span class="text-vi" lang="vi">Học vấn và thành tích</span>
+        <span class="text-en" lang="en">Education & Achievements</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div id="gpa-block" class="gpa-block"></div>
+      <div id="hocbong-block" class="hocbong-block"></div>
+      <div id="chungchi-block" class="chungchi-block"></div>
+    </div>
+  </section>
+
+  <!-- DỰ ÁN -->
+  <section id="du-an" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="du-an-heading">
+        <span class="text-vi" lang="vi">Dự án nổi bật</span>
+        <span class="text-en" lang="en">Featured Projects</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div class="tabs" role="tablist">
+        <button class="tabs__tab" role="tab" aria-selected="true" aria-controls="group-nckh">
+          <span class="text-vi" lang="vi">Nghiên cứu khoa học</span>
+          <span class="text-en" lang="en">Research</span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="group-startup">
+          <span class="text-vi" lang="vi">Start up</span>
+          <span class="text-en" lang="en">Start-ups</span>
+        </button>
+      </div>
+      <div id="group-nckh" class="project-group tabs__panel" role="tabpanel"></div>
+      <div id="group-startup" class="project-group tabs__panel" role="tabpanel" hidden></div>
+    </div>
+  </section>
+
+  <!-- KINH NGHIỆM -->
+  <section id="kinh-nghiem" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="kinh-nghiem-heading">
+        <span class="text-vi" lang="vi">Kinh nghiệm làm việc và ngoại khóa</span>
+        <span class="text-en" lang="en">Experience & Extracurriculars</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div class="tabs" role="tablist">
+        <button class="tabs__tab" role="tab" aria-selected="true" aria-controls="branch-ngoai-khoa">
+          <span class="text-vi" lang="vi">Trải nghiệm ngoại khóa</span>
+          <span class="text-en" lang="en">Extracurricular</span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="branch-lam-viec">
+          <span class="text-vi" lang="vi">Kinh nghiệm làm việc</span>
+          <span class="text-en" lang="en">Work Experience</span>
+        </button>
+      </div>
+      <ul id="branch-ngoai-khoa" class="timeline tabs__panel" role="tabpanel"></ul>
+      <ul id="branch-lam-viec" class="timeline tabs__panel" role="tabpanel" hidden></ul>
+    </div>
+  </section>
+
+  <!-- ĐÁNH GIÁ -->
+  <section id="danh-gia" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="danh-gia-heading">
+        <span class="text-vi" lang="vi">Đánh giá phản hồi</span>
+        <span class="text-en" lang="en">Feedback & Testimonials</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div class="testimonial-group">
+        <h3><span class="text-vi" lang="vi">Khách hàng</span><span class="text-en" lang="en">Clients</span></h3>
+        <div id="testimonials-khach-hang-list"></div>
+      </div>
+      <div class="testimonial-group">
+        <h3><span class="text-vi" lang="vi">Đồng nghiệp</span><span class="text-en" lang="en">Colleagues</span></h3>
+        <div id="testimonials-dong-nghiep-list"></div>
+      </div>
+      <div class="testimonial-group">
+        <h3><span class="text-vi" lang="vi">Cấp trên</span><span class="text-en" lang="en">Supervisors</span></h3>
+        <div id="testimonials-cap-tren-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOẠT ĐỘNG KHÁC -->
+  <section id="hoat-dong-khac" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="hoat-dong-khac-heading">
+        <span class="text-vi" lang="vi">Hoạt động khác</span>
+        <span class="text-en" lang="en">Other Activities</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div id="hoat-dong-khac-list"></div>
+      <div id="hoat-dong-khac-drive-links" class="hoat-dong-khac__links"></div>
+    </div>
+  </section>
+
+  <!-- LIÊN HỆ -->
+  <section id="lien-he" class="panel" hidden>
+    <div class="panel__header">
+      <h2 id="lien-he-heading">
+        <span class="text-vi" lang="vi">Thông tin liên hệ</span>
+        <span class="text-en" lang="en">Contact</span>
+      </h2>
+      <button class="panel__close" data-action="close-panel">
+        <span class="text-vi" lang="vi">Trang chủ</span>
+        <span class="text-en" lang="en">Home</span>
+      </button>
+    </div>
+    <div class="panel__body">
+      <div id="lien-he-list"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh" hidden>
+  <button class="lightbox__close" data-action="close-lightbox" aria-label="Đóng">×</button>
+  <img id="lightbox-image" class="lightbox__image" alt="" />
+  <div id="lightbox-caption" class="lightbox__caption"></div>
+</div>
+
+<!-- =========================================================================
+     CONTENT.JS — DỮ LIỆU (đặt TRƯỚC app.js)
+     ========================================================================= -->
+<script>
+const IMAGES = {
+  qldn:          { label: "Chứng chỉ QLDN",        src: "assets/Chứng chỉ QLDN.png" },
+  mc1:           { label: "MC 1",                  src: "assets/MC1.jpg" },
+  mc2:           { label: "MC 2",                  src: "assets/MC 2.jpg" },
+  mc3:           { label: "MC 3",                  src: "assets/MC 3.JPG" },
+  mc4:           { label: "MC 4",                  src: "assets/MC 4.JPG" },
+  talkshow1:     { label: "Talkshow 1",            src: "assets/Talkshow 1.JPG" },
+  talkshow2:     { label: "Talkshow 2",            src: "assets/Talkshow 2.jpg" },
+  ai:            { label: "Chứng chỉ AI",          src: "assets/Chứng chỉ AI.png" },
+  vhd2024:       { label: "Nhất VHĐ 2024",         src: "assets/Nhất VHĐ 2024.png" },
+  vhd2025:       { label: "Nhất VHĐ 2025",         src: "assets/Nhất VHĐ 2025.png" },
+  hbADM:         { label: "Học Bổng ADM",          src: "assets/Học Bổng ADM.jpg" },
+  hbKKHT:        { label: "Học bổng KKHT",         src: "assets/Học bổng KKHT.png" },
+  hbThienBinh:   { label: "Học Bổng Thiên Bình",   src: "assets/Học Bổng Thiên Bình.png" },
+  quocPhong:     { label: "Chứng chỉ Quốc Phòng",  src: "assets/Chứng chỉ Quốc Phòng.jpg" },
+  baNCKH2024:    { label: "Ba NCKH 2024",          src: "assets/Ba NCKH 2024.png" },
+  nhiKNNN2024:   { label: "Nhì KNNN 2024",         src: "assets/Nhì KNNN 2024.png" },
+  nhatKNNN2024:  { label: "Nhất KNNN 2024",        src: "assets/Nhất KNNN 2024.png" },
+  nhiKNNN2025:   { label: "Nhì KNNN 2025",         src: "assets/Nhì KNNN 2025.png" },
+  doiCTXH1:      { label: "Đội CTXH",              src: "assets/Đội CTXH 1.jpg" },
+  doiCTXH2:      { label: "Đội CTXH 2",            src: "assets/Đội CTXH 2.JPG" },
+  nsc:           { label: "NSC",                   src: "assets/NSC.jpg" },
+  lab:           { label: "Lab",                   src: "assets/Lab.jpg" },
+  ttcs2a:        { label: "TTCS 2",                src: "assets/TTCS 2.JPG" },
+  ttcs2b:        { label: "TTCS 2",                src: "assets/TTCS 2.jpg" },
+  thuTayYen:     { label: "Thư tay Yến",           src: "assets/Thư tay Yến.jpg" },
+  hienMau:       { label: "Hiến máu",              src: "assets/Hiến máu.jpg" },
+  thienNguyen1:  { label: "Thiện nguyện 1",        src: "assets/Thiện nguyện 1.jpg" },
+  thienNguyen2:  { label: "Thiện nguyện 2",        src: "assets/Thiện nguyện 2.jpg" },
+  thienNguyen3:  { label: "Thiện nguyện 3",        src: "assets/Thiện nguyện 3.jpg" },
+  thienNguyen4:  { label: "Thiện nguyện 4",        src: "assets/Thiện nguyện 4.jpg" },
+  thienNguyen5:  { label: "Thiện nguyện 5",        src: "assets/Thiện nguyện 5.jpg" },
+  hoiSinhVien:   { label: "Hội sinh viên",         src: "assets/Hội sinh viên.jpg" },
+  doanThanhNien: { label: "Đoàn thanh niên",       src: "assets/Đoàn thanh niên.jpg" },
+};
+
+const TOOL_LOGOS = {
+  word:    "assets/tools/word.svg",
+  ppt:     "assets/tools/powerpoint.svg",
+  chatgpt: "assets/tools/chatgpt.svg",
+  canva:   "assets/tools/canva.svg",
+  capcut:  "assets/tools/capcut-pro.svg",
+};
+
+const CONTENT = {
+  profile: {
+    portrait: "assets/NSC.jpg",
+    name: { vi: "Kĩ Sư Nông Học Lê Hoàng Phúc", en: "Agricultural Engineer Lê Hoàng Phúc" },
+    motto: {
+      vi: "Triết lí sống: Trải nghiệm và truyền cảm hứng. Châm ngôn sống: Gia đình là số 1",
+      en: "Life philosophy: Experience and inspire. Life motto: Family comes first",
+    },
+    story: {
+      vi: "Người ta thường nói, khi khỏe mạnh chúng ta có hàng trăm mối lo, nhưng khi ốm đau, sức khỏe là mối bận tâm duy nhất. Hiểu rõ giá trị cốt lõi của cây dược liệu trong việc chữa bệnh, tôi không ngừng trau dồi chuyên môn với khát vọng trở thành một chuyên gia phát triển sản phẩm từ cây dược liệu, mang đến những giải pháp bảo vệ sức khỏe tối ưu và nâng tầm chất lượng sống cho cộng đồng",
+      en: "People often say that when we are healthy we have hundreds of worries, but when we are sick, health becomes our only concern. Understanding the core value of medicinal plants in healing, I constantly develop my expertise with the aspiration of becoming an expert in developing products from medicinal plants, bringing optimal health-protection solutions and elevating the quality of life for the community",
+    },
+  },
+  skills: {
+    chuyenMon: [
+      { vi: "Thu thập xử lí số liệu thống kê", en: "Statistical data collection and processing" },
+      { vi: "Quản lí dịch hại tổng hợp IPM", en: "Integrated Pest Management (IPM)" },
+      { vi: "Chăm sóc, quản lí cây trồng", en: "Crop care and management" },
+    ],
+    mem: [
+      { vi: "Quản lí dự án", en: "Project Management", images: [IMAGES.qldn] },
+      { vi: "MC", en: "Master of Ceremonies (MC)", images: [IMAGES.mc1, IMAGES.mc2, IMAGES.mc3, IMAGES.mc4] },
+      { vi: "Tổ chức sự kiện", en: "Event Organization", images: [IMAGES.talkshow1, IMAGES.talkshow2] },
+      { vi: "Ai", en: "Ai", images: [IMAGES.ai] },
+      {
+        vi: "Viết lách", en: "Writing",
+        images: [IMAGES.vhd2024, IMAGES.vhd2025],
+        externalLinks: [
+          { vi: "Đi đến bài viết (2024)", en: "Go to the article (2024)", url: "https://www.facebook.com/share/p/1C1fQkEUYt/" },
+          { vi: "Đi đến bài viết (2025)", en: "Go to the article (2025)", url: "https://www.facebook.com/share/p/19Ez6T7NGG/" },
+        ],
+      },
+    ],
+    thietKe: {
+      vi: "Thiết kế", en: "Design",
+      externalLinks: [
+        { vi: "Sản phẩm 1", en: "Product 1", url: "https://drive.google.com/file/d/1z9hNiN93O7Y5cv955vzaYtGBmqHl2ShT/view?usp=drive_link" },
+        { vi: "Sản phẩm 2", en: "Product 2", url: "https://drive.google.com/file/d/1JtL0bfbrFR5v65A_ef23jEyJ9NEZHl4Q/view?usp=drive_link" },
+        { vi: "Sản phẩm 3", en: "Product 3", url: "https://drive.google.com/file/d/1XaN1Mkb444HTN5iZHodmuiNxKtU3sD6O/view?usp=drive_link" },
+      ],
+    },
+    tool: [
+      { name: "Word", src: TOOL_LOGOS.word },
+      { name: "Powerpoint", src: TOOL_LOGOS.ppt },
+      { name: "Chat GPT", src: TOOL_LOGOS.chatgpt },
+      { name: "Canva", src: TOOL_LOGOS.canva },
+      { name: "Capcut Pro", src: TOOL_LOGOS.capcut },
+    ],
+  },
+  education: {
+    gpa: {
+      value: "3.58",
+      link: "https://drive.google.com/file/d/1557IZ0VNFEe_Fo924ICSL_TVfB7okL8O/view?usp=drive_link",
+    },
+    hocBong: {
+      vi: "Học bổng Doanh nghiệp và trong trường", en: "Corporate and In-school Scholarships",
+      images: [IMAGES.hbADM, IMAGES.hbKKHT, IMAGES.hbThienBinh],
+    },
+    chungChi: {
+      vi: "Chứng chỉ", en: "Certificates",
+      images: [IMAGES.ai, IMAGES.quocPhong, IMAGES.qldn],
+    },
+  },
+  projects: {
+    nckh: [
+      {
+        id: "thien-nien-kien",
+        name: { vi: "Thiên niên kiện", en: "Thiên niên kiện (Homalomena occulta)" },
+        category: { vi: "Nghiên cứu khoa học", en: "Research" },
+        role: { vi: "Chủ nhiệm đề tài sinh viên", en: "Student project lead" },
+        awards: [],
+        metrics: [
+          { label: { vi: "NAA", en: "NAA" }, value: "150 ppm (60 giây)" },
+          { label: { vi: "Giá thể", en: "Substrate" }, value: "25% đất + 50% cát + 25% mụn dừa" },
+          { label: { vi: "Tỷ lệ sống", en: "Survival rate" }, value: "85,8%" },
+          { label: { vi: "Cây loại 1", en: "Grade-1 plants" }, value: "73,3%" },
+        ],
+        objective: {
+          vi: "Tối ưu hóa quy trình nhân giống cây dược liệu thiên niên kiện bằng hom. Tìm ra công thức xử lý chất kích thích (NAA) và loại đất trồng (giá thể) tốt nhất để nhân giống cây thiên niên kiện đạt tỷ lệ sống và chất lượng cao.",
+          en: "Optimize the stem-cutting propagation process of the medicinal plant Thiên niên kiện. Find the best NAA (stimulant) treatment formula and growing substrate to propagate the plant with high survival rate and quality.",
+        },
+        process: {
+          type: "steps",
+          steps: [
+            { vi: "Thí nghiệm 1: Thử nghiệm ngâm hom cây với các nồng độ và thời gian NAA khác nhau để tìm công thức giúp ra rễ tốt nhất.", en: "Experiment 1: Testing cutting soak treatments at different NAA concentrations and durations to find the formula that best promotes rooting." },
+            { vi: "Thí nghiệm 2: Dùng công thức NAA tối ưu đó để trồng thử vào 5 loại hỗn hợp tỉ lệ giá thể khác nhau (phối trộn từ đất, cát, mụn dừa, tro trấu, phân trùn).", en: "Experiment 2: Using that optimal NAA formula to trial-plant into 5 different substrate mixture ratios (blended from soil, sand, coconut coir, rice husk ash, and worm castings)." },
+          ],
+        },
+        result: {
+          vi: "Công thức hoàn hảo nhất là ngâm hom trong NAA 150 ppm (60 giây), sau đó trồng trên giá thể gồm 25% đất + 50% cát + 25% mụn dừa. Cách này giúp cây đạt tỷ lệ sống 85,8%, phát triển khỏe mạnh (cao 27,7 cm, đường kính thân 14,4 mm) và có tới 73,3% cây đạt chuẩn loại 1 để xuất vườn.",
+          en: "The best formula is soaking cuttings in NAA 150 ppm (60 seconds), then planting in a substrate of 25% soil + 50% sand + 25% coconut coir. This achieves an 85.8% survival rate, healthy growth (27.7 cm tall, 14.4 mm stem diameter), and up to 73.3% of plants reaching Grade-1 standard for nursery release.",
+        },
+        links: [
+          { vi: "Báo cáo tổng kết", en: "Summary report", url: "https://drive.google.com/file/d/1HFYgqk_NYD2eKKze8p7f5OgICy98UiQd/view?usp=drive_link" },
+          { vi: "Bài báo khoa học", en: "Scientific article", url: "https://jad.hcmuaf.edu.vn/index.php/jadvn/article/view/1463" },
+        ],
+        images: [],
+      },
+      {
+        id: "kim-tien-thao",
+        name: { vi: "Kim tiền thảo", en: "Kim tiền thảo (Desmodium styracifolium)" },
+        category: { vi: "Nghiên cứu khoa học", en: "Research" },
+        role: {
+          vi: "Sinh viên thực hiện khóa luận tốt nghiệp và là thành viên nhóm nghiên cứu của đề tài khoa học cấp cơ sở. Trực tiếp thiết kế, bố trí và theo dõi toàn bộ số liệu của 2 thí nghiệm về nảy mầm và sinh trưởng vườn ươm.",
+          en: "Graduation-thesis student and member of the base-level scientific research team. Directly designed, arranged and tracked all data for the 2 experiments on germination and nursery growth.",
+        },
+        awards: [],
+        metrics: [
+          { label: { vi: "GA3", en: "GA3" }, value: "100 ppm (4 giờ) → nảy mầm 86%" },
+          { label: { vi: "AMF", en: "AMF" }, value: "tăng 3,64 lần tỷ lệ cộng sinh" },
+          { label: { vi: "DQI", en: "DQI" }, value: "tăng 34,1%" },
+          { label: { vi: "Xuất vườn", en: "Nursery release" }, value: "81,2%" },
+        ],
+        objective: {
+          vi: "Xác định nồng độ và thời gian xử lý GA3 tối ưu để phá ngủ nghỉ, giúp hạt kim tiền thảo nảy mầm đồng loạt. Tìm ra công thức giá thể phối trộn phù hợp và đánh giá vai trò của nấm rễ nội cộng sinh (AMF) nhằm nâng cao chất lượng và tỷ lệ xuất vườn của cây con.",
+          en: "Determine the optimal GA3 concentration and treatment time to break dormancy, helping Kim tiền thảo seeds germinate uniformly. Find a suitable substrate mixture formula and evaluate the role of arbuscular mycorrhizal fungi (AMF) to improve seedling quality and nursery-release rate.",
+        },
+        process: {
+          type: "steps",
+          intro: { vi: "Gồm 2 thí nghiệm bố trí ngẫu nhiên hoàn toàn, 3 lần lặp lại.", en: "Consisting of 2 experiments arranged in a completely randomized design, with 3 replications." },
+          steps: [
+            { vi: "Thí nghiệm 1: Ngâm hạt với các nồng độ GA3 (0, 50, 100, 150 ppm) và thời gian (2, 4, 6 giờ) để tìm công thức giúp hạt nảy mầm tốt nhất.", en: "Experiment 1: Soaking seeds at GA3 concentrations (0, 50, 100, 150 ppm) and durations (2, 4, 6 hours) to find the formula for the best germination." },
+            { vi: "Thí nghiệm 2: Dùng hạt đã xử lý tối ưu gieo vào 6 loại hỗn hợp giá thể khác nhau (phối trộn từ đất, cát, trấu hun) kết hợp có và không có chủng nấm rễ AMF để đánh giá sinh trưởng cây con trong nhà màng.", en: "Experiment 2: Sowing optimally-treated seeds into 6 different substrate mixtures (blended from soil, sand, carbonized rice husk), combined with and without AMF inoculation, to evaluate seedling growth in the greenhouse." },
+          ],
+        },
+        result: {
+          vi: "Công thức hoàn hảo nhất là ngâm hạt trong GA3 100 ppm (4 giờ) giúp tỷ lệ nảy mầm đạt 86%. Khi ra vườn ươm, \"công thức vàng\" là giá thể 25% đất + 25% cát + 50% trấu hun kết hợp nấm AMF. Cách này giúp cây phát triển vượt trội (cao 11,82 cm, 14,32 lá, 36,4 rễ/cây), tỷ lệ rễ cộng sinh đạt 44,67%, sinh khối tươi cao nhất (4,58 g/cây) và đạt tỷ lệ xuất vườn ấn tượng 81,2%. Việc chủng AMF giúp tăng 3,64 lần tỷ lệ cộng sinh và cải thiện đáng kể chất lượng cây con (chỉ số DQI tăng 34,1%).",
+          en: "The best formula is soaking seeds in GA3 100 ppm (4 hours), achieving an 86% germination rate. In the nursery, the \"golden formula\" is a substrate of 25% soil + 25% sand + 50% carbonized rice husk combined with AMF fungi. This gives outstanding growth (11.82 cm tall, 14.32 leaves, 36.4 roots/plant), a 44.67% root-colonization rate, the highest fresh biomass (4.58 g/plant), and an impressive 81.2% nursery-release rate. AMF inoculation increased the colonization rate 3.64-fold and significantly improved seedling quality (DQI index up 34.1%).",
+        },
+        links: [],
+        images: [],
+      },
+    ],
+    startup: [
+      {
+        id: "dogter-leaf",
+        name: { vi: "Dogter Leaf", en: "Dogter Leaf" },
+        category: { vi: "Start up", en: "Start-up" },
+        role: { vi: "Leader quản lí dự án", en: "Project Lead" },
+        awards: [{ vi: "Giải Nhì KNNN 2024", en: "2nd Prize — Agricultural Startup Competition 2024" }],
+        metrics: [
+          { label: { vi: "Giải thưởng", en: "Award" }, value: "Giải Nhì KNNN 2024" },
+          { label: { vi: "Vai trò", en: "Role" }, value: "Leader quản lí dự án" },
+        ],
+        objective: {
+          vi: "Nghiên cứu và phát triển chỉ khâu tự tiêu từ phụ phẩm lá dứa nhằm thay thế chỉ khâu tổng hợp truyền thống. Giải quyết \"nỗi đau\" phải tháo chỉ và nguy cơ nhiễm trùng ở thú cưng, đồng thời tận dụng phế phẩm nông nghiệp để giảm rác thải y tế và tối ưu chi phí điều trị.",
+          en: "Research and develop absorbable sutures from pineapple-leaf by-products to replace traditional synthetic sutures. Solve the \"pain point\" of suture removal and infection risk in pets, while making use of agricultural waste to reduce medical waste and optimize treatment costs.",
+        },
+        process: {
+          type: "text",
+          vi: "Tập trung vào công nghệ sinh học và thử nghiệm thực tiễn. Nguyên liệu lá dứa được chiết xuất cellulose, sau đó xử lý bằng phương pháp oxy hóa TEMPO để gắn nhóm carboxyl (-COOH), tạo ra vật liệu TORC (cellulose tái sinh bị oxy hóa). Tiếp theo là công đoạn nhuộm màu (giúp nhận biết, theo dõi tiến trình lành vết thương và phân loại đặc tính sợi) và kéo sợi. Cuối cùng là kiểm định cơ tính, đánh giá tiêu chuẩn dược điển và thử nghiệm lâm sàng tại các bệnh viện, phòng khám thú y đối tác.",
+          en: "Focused on biotechnology and practical trials. Cellulose is extracted from pineapple-leaf material, then treated using the TEMPO oxidation method to attach carboxyl groups (-COOH), creating TORC material (TEMPO-oxidized regenerated cellulose). Next is the dyeing stage (to aid identification, track wound-healing progress and classify fiber properties) and spinning. Finally, mechanical testing, pharmacopoeia-standard evaluation and clinical trials at partner hospitals and veterinary clinics.",
+        },
+        result: {
+          vi: "Nghiên cứu thành công dòng chỉ khâu tự tiêu hoàn toàn mới trên thị trường: sợi Cellulose. Nhờ tận dụng nguồn nguyên liệu nông nghiệp dồi dào và quy trình sinh học tối ưu, giá thành sản xuất thấp hơn hẳn so với chỉ khâu tổng hợp. Dự án thành công chinh phục giải Nhì cuộc thi KNNN năm 2024, tiếp tục được nghiên cứu và phát triển sâu bằng đề tài nghiên cứu khoa học khoa Chăn nuôi Thú Y",
+          en: "Successfully researched an entirely new absorbable-suture line for the market: Cellulose fiber. By making use of abundant agricultural raw materials and an optimized biological process, the production cost is markedly lower than synthetic sutures. The project won 2nd Prize at the 2024 Agricultural Startup Competition (KNNN) and continues to be researched further through a Faculty of Animal Science and Veterinary Medicine scientific research project",
+        },
+        links: [
+          { vi: "Show minh chứng", en: "Show evidence", url: "https://drive.google.com/file/d/1jxRHYQtYMZFsMWb_7oUXqF3ryiJaEYUE/view?usp=drive_link" },
+          { vi: "Link báo Người Lao Động", en: "Người Lao Động newspaper article", url: "https://tuoitre.vn/nld/khoi-nghiep-tu-giang-duong-196250928173131393.htm" },
+        ],
+        images: [IMAGES.baNCKH2024, IMAGES.nhiKNNN2024],
+      },
+      {
+        id: "ecomew",
+        name: { vi: "Ecomew", en: "Ecomew" },
+        category: { vi: "Start up", en: "Start-up" },
+        role: { vi: "Leader quản lí dự án", en: "Project Lead" },
+        awards: [{ vi: "Giải Nhất Khởi nghiệp nông nghiệp 2024", en: "1st Prize — Agricultural Startup Competition 2024" }],
+        metrics: [
+          { label: { vi: "Giải thưởng", en: "Award" }, value: "Giải Nhất Khởi nghiệp nông nghiệp 2024" },
+          { label: { vi: "Đề cử", en: "Nomination" }, value: "SV Startup toàn quốc cùng năm" },
+        ],
+        objective: {
+          vi: "Nghiên cứu và sản xuất cát mèo hữu cơ từ phụ phẩm nông nghiệp (bã mía và vỏ cam) nhằm thay thế cát truyền thống chứa hóa chất độc hại. Giải quyết bài toán rác thải khó phân hủy, bảo vệ sức khỏe vật nuôi, đồng thời thúc đẩy mô hình kinh tế tuần hoàn thông qua việc tái chế phế phẩm thành phân bón hữu cơ.",
+          en: "Research and produce organic cat litter from agricultural by-products (sugarcane bagasse and orange peel) to replace traditional litter containing harmful chemicals. Solve the problem of non-biodegradable waste, protect pet health, and promote a circular-economy model by recycling by-products into organic fertilizer.",
+        },
+        process: {
+          type: "steps",
+          steps: [
+            { vi: "(1) Thu gom và xử lý nguyên liệu (nghiền bã mía, sản xuất than hoạt tính từ vỏ cam, chiết xuất tinh dầu tự nhiên);", en: "(1) Collecting and processing raw materials (grinding bagasse, producing activated carbon from orange peel, extracting natural essential oils);" },
+            { vi: "(2) Tận dụng phụ phẩm (dùng lượng đường/đạm dư thừa từ bã mía và vỏ cam để nuôi tảo, sản xuất phân bón lỏng);", en: "(2) Making use of by-products (using surplus sugar/nitrogen from bagasse and orange peel to grow algae, producing liquid fertilizer);" },
+            { vi: "(3) Phối trộn nguyên liệu với các gói vi sinh khử mùi và phân giải cellulose;", en: "(3) Blending materials with odor-eliminating and cellulose-decomposing microbial packs;" },
+            { vi: "(4) Ép viên, tạo hình, kiểm định nghiêm ngặt các tiêu chí (độ thấm hút, khả năng vón cục, khử mùi) và đóng gói;", en: "(4) Pelletizing, shaping, strict quality testing (absorbency, clumping ability, odor control) and packaging;" },
+            { vi: "(5) Phân phối đa kênh qua thương mại điện tử, cửa hàng thú cưng, siêu thị và đối tác B2B.", en: "(5) Multi-channel distribution via e-commerce, pet stores, supermarkets and B2B partners." },
+          ],
+        },
+        result: {
+          vi: "Tạo ra sản phẩm cát mèo hữu cơ EcoMew hoàn thiện, có khả năng thấm hút vượt trội, khử mùi hiệu quả nhờ than vỏ cam và tinh dầu, đồng thời 100% phân hủy sinh học an toàn. Sản phẩm đi kèm giải pháp \"xanh\" giúp biến chất thải thành phân compost nhờ gói vi sinh phân giải cellulose. Dự án xuất sắc chinh phục giải nhất cuộc thi Khởi nghiệp nông nghiệp 2024, và được đề cử dự thi cuộc thi khởi nghiệp toàn quốc SV Startup cùng năm.",
+          en: "Created the finished EcoMew organic cat-litter product, with outstanding absorbency, effective odor control thanks to orange-peel carbon and essential oils, and 100% safe biodegradability. The product comes with a \"green\" solution that turns waste into compost via the cellulose-decomposing microbial pack. The project excellently won 1st Prize at the 2024 Agricultural Startup Competition, and was nominated for the national SV Startup competition the same year.",
+        },
+        links: [
+          { vi: "Show minh chứng", en: "Show evidence", url: "https://drive.google.com/file/d/1YsbAU8tRy0sbrQHekAhaLfcWtUU1rvcD/view?usp=drive_link" },
+        ],
+        images: [IMAGES.nhatKNNN2024],
+      },
+      {
+        id: "samcheck",
+        name: { vi: "Samcheck", en: "Samcheck" },
+        category: { vi: "Start up", en: "Start-up" },
+        role: { vi: "Leader quản lí dự án", en: "Project Lead" },
+        awards: [{ vi: "Giải nhì khởi nghiệp nông nghiệp 2025", en: "2nd Prize — Agricultural Startup Competition 2025" }],
+        metrics: [
+          { label: { vi: "Giải thưởng", en: "Award" }, value: "Giải nhì khởi nghiệp nông nghiệp 2025" },
+          { label: { vi: "Hệ số", en: "Coefficient" }, value: "5.177" },
+          { label: { vi: "Hợp đồng", en: "Contract" }, value: "Công ty Sâm Ngọc Linh K3 Quảng Nam" },
+        ],
+        objective: {
+          vi: "Phát triển nền tảng truy xuất nguồn gốc thông minh cho sâm Ngọc Linh bằng cách kết hợp công nghệ Blockchain và xác thực ADN, tạo ra \"dấu vân tay số\" duy nhất cho mỗi lô sâm. Bảo vệ người tiêu dùng khỏi hàng giả, giúp doanh nghiệp minh bạch hóa chuỗi giá trị \"từ gốc đến ngọn\" và nâng tầm giá trị dược liệu quốc bảo.",
+          en: "Develop a smart traceability platform for Ngọc Linh ginseng by combining Blockchain technology and DNA authentication, creating a unique \"digital fingerprint\" for each ginseng batch. Protect consumers from counterfeit goods, help businesses make the value chain transparent \"from root to tip\", and elevate the value of this national-treasure medicinal plant.",
+        },
+        process: {
+          type: "steps",
+          intro: { vi: "Ứng dụng quy trình liên ngành giữa Nông học, Công nghệ thông tin và Kiểm nghiệm sinh học.", en: "Applying an interdisciplinary process across Agronomy, Information Technology and Biological Testing." },
+          steps: [
+            { vi: "(1) Sử dụng DNA barcode và phân tích hóa học để định danh hoạt chất, tạo mã sinh học riêng biệt.", en: "(1) Using DNA barcoding and chemical analysis to identify active compounds, creating a distinct biological code." },
+            { vi: "(2) Mã hóa toàn bộ hành trình cây sâm lên nền tảng Blockchain bất biến, tích hợp QR code giới hạn lượt quét và AI để tự động phát hiện hành vi quét bất thường.", en: "(2) Encoding the ginseng plant's entire journey onto an immutable Blockchain platform, integrating a scan-limited QR code and AI to automatically detect abnormal scanning behavior." },
+            { vi: "(3) Đóng gói thành dịch vụ B2B (gồm phần mềm quản lý, website, tem nhãn) cung cấp cho các hộ trồng và doanh nghiệp kinh doanh sâm, kết hợp chiến lược truyền thông đa kênh tác động vào 3 nhóm: doanh nghiệp, người tiêu dùng và cơ quan quản lý.", en: "(3) Packaging into a B2B service (management software, website, labels) provided to ginseng-growing households and businesses, combined with a multi-channel communication strategy targeting 3 groups: businesses, consumers and regulatory authorities." },
+          ],
+        },
+        result: {
+          vi: "Hoàn thiện hệ thống SamCheck với tem QR bảo mật độc quyền, tạo rào cản kỹ thuật chống hàng giả vượt trội so với tem truyền thống. Giải quyết trúng đích nhu cầu thị trường khi \"thông tin minh bạch\" được chứng minh là yếu tố tăng niềm tin mạnh nhất (hệ số 5.177). Dự án đã có hợp đồng tiên phong với Công ty Sâm Ngọc Linh K3 Quảng Nam. Thành công chinh phục giải nhì cuộc thi khởi nghiệp nông nghiệp 2025",
+          en: "Completed the SamCheck system with an exclusive secure QR stamp, creating a technical barrier against counterfeiting far superior to traditional stamps. Precisely met market demand as \"transparent information\" was proven to be the strongest trust-building factor (coefficient 5.177). The project has a pioneering contract with Sâm Ngọc Linh K3 Quảng Nam Company. Successfully won 2nd Prize at the 2025 Agricultural Startup Competition",
+        },
+        links: [
+          { vi: "Trang web đối tác hợp tác", en: "Partner website", url: "https://samngoclinhk3.vn/" },
+          { vi: "Trang web sản phẩm dự án", en: "Project product website", url: "https://samngoclinhk3qn.vn/login" },
+          { vi: "Show minh chứng", en: "Show evidence", url: "https://drive.google.com/file/d/1rr6TpiYgPsfQWoun4DsRKIacz6c8Nd81/view?usp=drive_link" },
+        ],
+        images: [IMAGES.nhiKNNN2025],
+      },
+    ],
+  },
+  experience: {
+    ngoaiKhoa: [
+      { year: "2022", org: { vi: "Đội công tác xã hội", en: "Social Work Team" }, role: { vi: "Tình nguyện viên", en: "Volunteer" }, images: [IMAGES.doiCTXH1, IMAGES.doiCTXH2] },
+      { year: "2023", org: { vi: "CLB Khởi Nghiệp", en: "Startup Club" }, role: { vi: "Thành viên", en: "Member" }, images: [] },
+      { year: "2024", org: { vi: "CLB Khởi Nghiệp", en: "Startup Club" }, role: { vi: "Thành viên", en: "Member" }, images: [] },
+      { year: "2025", org: { vi: "CLB Khởi Nghiệp", en: "Startup Club" }, role: { vi: "Trưởng ban Kĩ Năng", en: "Head of Skills Board" }, images: [IMAGES.nsc] },
+    ],
+    lamViec: [
+      { year: "2022", org: { vi: "Phòng thí nghiệm bộ môn Di truyền và Chọn giống cây trồng", en: "Laboratory of the Department of Plant Genetics and Breeding" }, role: { vi: "Thành viên hoạt động nuôi cấy mô tế bào thực vật", en: "Member — plant tissue culture activities" }, images: [IMAGES.lab] },
+      { year: "2022", org: { vi: "Trung tâm nghiên cứu Nông nghiệp Công Nghệ Cao TP HCM (1 tháng)", en: "HCMC Hi-Tech Agriculture Research Center (1 month)" }, role: { vi: "Thực tập viên", en: "Intern" }, images: [] },
+      { year: "2023", org: { vi: "Phòng thí nghiệm bộ môn Di truyền và Chọn giống cây trồng", en: "Laboratory of the Department of Plant Genetics and Breeding" }, role: { vi: "Thành viên hoạt động nuôi cấy mô tế bào thực vật", en: "Member — plant tissue culture activities" }, images: [] },
+      { year: "2023", org: { vi: "Trung tâm Ươm tạo Doanh nghiệp Công nghệ", en: "Technology Business Incubation Center" }, role: { vi: "Cộng tác viên văn phòng", en: "Office Collaborator" }, images: [] },
+      { year: "2023", org: { vi: "Công ty TNHH DALAT HASFARM (2 tháng)", en: "DALAT HASFARM Co., Ltd. (2 months)" }, role: null, images: [IMAGES.ttcs2a, IMAGES.ttcs2b],
+        resultLink: { vi: "Kết quả thực tập", en: "Internship results", url: "https://drive.google.com/file/d/1OZmVXkUhO_XeHF4TAKp2Wt3TlIrbmZne/view?usp=drive_link" },
+      },
+      { year: "2024", org: { vi: "Phòng thí nghiệm bộ môn Di truyền và Chọn giống cây trồng", en: "Laboratory of the Department of Plant Genetics and Breeding" }, role: { vi: "Thành viên hoạt động nuôi cấy mô tế bào thực vật", en: "Member — plant tissue culture activities" }, images: [] },
+      { year: "2025", org: { vi: "Phòng thí nghiệm bộ môn Di truyền và Chọn giống cây trồng", en: "Laboratory of the Department of Plant Genetics and Breeding" }, role: { vi: "Thành viên hoạt động nuôi cấy mô tế bào thực vật", en: "Member — plant tissue culture activities" }, images: [] },
+    ],
+    labContactNote: {
+      vi: "liên hệ ThS Nguyễn Thị Thanh Duyên, cán bộ quản lí phòng lab nếu cần xác thực, ntthanhduyen@hcmuaf.edu.vn",
+      en: "contact MSc. Nguyễn Thị Thanh Duyên, lab manager, for verification if needed, ntthanhduyen@hcmuaf.edu.vn",
+    },
+  },
+  testimonials: {
+    khachHang: [
+      {
+        author: { vi: "Giám đốc công ty", en: "Company Director" },
+        org: { vi: "Khách hàng — Công Ty Cổ Phần Sâm Ngọc Linh K3 QN", en: "Client — Sâm Ngọc Linh K3 QN Joint Stock Company" },
+        content: { vi: "Phúc là một sinh viên năng động, có tinh thần cầu tiền, làm việc nghiêm túc, biết lắng nghe vấn đề và đề xuất giải pháp phù hợp.", en: "Phúc is a dynamic student with a spirit of drive [original text: \"cầu tiền\"], works seriously, knows how to listen to problems and propose suitable solutions." },
+        verify: { vi: "Liên hệ xác thực 0985379379", en: "Verification contact 0985379379" },
+        images: [],
+      },
+    ],
+    dongNghiep: [
+      {
+        author: { vi: "Yến", en: "Yến" },
+        org: { vi: "Đồng nghiệp (Đồng đội) — Thành viên dự án DogtorLeaf, đến từ trường Đại học Khoa học Tự nhiên", en: "Colleague (Teammate) — Member of the DogtorLeaf project, from the University of Science" },
+        content: { vi: "Được làm bạn với bạn Phúc là may mắn lắm đấy. Cảm ơn vì đã luôn cho tao nhiều kỉ niệm khó quên và những trải nghiệm đặc biệt. Chúc bạn tôi sẽ luôn gặp được những người hỗ trợ đặc biệt trong lúc gian khó nha.", en: "Being friends with Phúc is such a lucky thing. Thanks for always giving me so many unforgettable memories and special experiences. I hope my friend will always find special people to support him in hard times." },
+        verify: null, images: [IMAGES.thuTayYen],
+      },
+      {
+        author: { vi: "Luận", en: "Luận" },
+        org: { vi: "Đồng nghiệp — Thành viên đề tài nghiên cứu khoa học sinh viên Thiên niên kiện", en: "Colleague — Member of the student scientific research project on Thiên niên kiện" },
+        content: { vi: "Phúc là người hài hước, vui vẻ, luôn sẵn lòng lắng nghe khi người khác nói, không ngắt lời, khi gặp vấn đề trong đề tài, bạn không đổ lỗi mà bình tĩnh ngôi xuống họp nhóm tìm cách giải quyết. Luôn giúp đỡ và hỗ trợ tôi nhiều vấn đề trong học tập và cuộc sống, chúc Phúc công tác thuận lợi.", en: "Phúc is humorous, cheerful, always willing to listen when others speak, never interrupting; when a problem arose in the project, he did not blame others but calmly [original text: \"ngôi xuống\"] held a group meeting to find a solution. He always helped and supported me with many issues in study and life. I wish Phúc success in his work." },
+        verify: { vi: "Liên hệ xác minh 0784253230", en: "Verification contact 0784253230" },
+        images: [],
+      },
+    ],
+    capTren: [
+      {
+        author: { vi: "ThS Nguyễn Phạm Hồng Lan", en: "MSc. Nguyễn Phạm Hồng Lan" },
+        org: { vi: "Cấp trên — Cố vấn học tập (Chủ nhiệm lớp DH22NHB)", en: "Supervisor — Academic Advisor (Homeroom Teacher, class DH22NHB)" },
+        content: {
+          vi: "Tuy hoàn cảnh gia đình khó khăn nhưng ứng viên Phúc luôn không ngừng phấn đấu, nỗ lực, chăm chỉ, kiên trì hoàn thành tốt việc học và kết quả ngày càng tiến bộ. Ứng viên Phúc rất khiêm tốn, ham học hỏi, đặc biệt là trong chuyên ngành đang theo học. Bên cạnh đó, ứng viên Phúc cũng chủ động tham gia thực hiện, hỗ trợ các đề tài nghiên cứu khoa học cấp cơ sở cùng Thầy Cô, bạn bè và đã có nhiều thành tích đáng kể như Giải 3 Sinh viên Nông Lâm với Ý tưởng Nghiên cứu Khoa học, Thiết kế poster nghiên cứu khoa học ấn tượng và nhiều lần đạt giải cao trong các cuộc thi Khởi nghiệp Nông nghiệp do Trung tâm ươm tạo doanh nghiệp, ADM Awards tổ chức; đặc biệt là ứng viên Phúc còn tham gia viết và đăng báo khoa học trên Tạp chí Nông Nghiệp và Phát triển của Trường khi mới là sinh viên năm 3.",
+          en: "Despite difficult family circumstances, candidate Phúc has continuously strived, worked hard and persevered to complete his studies well, with steadily improving results. Candidate Phúc is very humble and eager to learn, especially in his major. In addition, candidate Phúc actively participated in and supported base-level scientific research projects together with lecturers and friends, achieving many notable results such as 3rd Prize at the Nông Lâm Student Scientific Research Idea competition, an impressive scientific-poster design, and repeatedly winning high prizes in Agricultural Startup competitions organized by the Business Incubation Center and ADM Awards; notably, candidate Phúc also wrote and published a scientific article in the University's Journal of Agriculture and Development while only in his 3rd year.",
+        },
+        verify: null,
+        link: { vi: "Xem minh chứng", en: "View proof", url: "https://drive.google.com/file/d/1bXBkABT5n37AfCdWikA2Jm08o01krObA/view?usp=drive_link" },
+        images: [],
+        longCard: true,
+      },
+    ],
+  },
+  activities: [
+    { vi: "Thiện nguyện: Hiến máu", en: "Volunteering: Blood donation", images: [IMAGES.hienMau] },
+    { vi: "Gây quỹ lớp học tình thương", en: "Fundraising for a charity class", images: [IMAGES.thienNguyen1, IMAGES.thienNguyen2, IMAGES.thienNguyen4, IMAGES.thienNguyen5] },
+    { vi: "Phát cơm từ thiện", en: "Charity meal distribution", images: [IMAGES.thienNguyen3] },
+    { vi: "Đội công tác xã hội", en: "Social Work Team", images: [IMAGES.doiCTXH1, IMAGES.doiCTXH2] },
+    { vi: "Hội sinh viên", en: "Student Association", images: [IMAGES.hoiSinhVien] },
+    { vi: "Đoàn thanh niên", en: "Youth Union", images: [IMAGES.doanThanhNien] },
+  ],
+  activityDriveLinks: [
+    { vi: "Các hình ảnh hoạt động khác", en: "Other activity photos (folder)", url: "https://drive.google.com/drive/folders/1d8aBZxSaPr8VNnamQVZOdtSEFRJfbG7W?usp=drive_link" },
+    { vi: "Các hình ảnh giấy khen, giấy chứng nhận khác", en: "Other certificates & awards photos (folder)", url: "https://drive.google.com/drive/folders/1gHs7cNPQ7BYzx8nK2WVB8Fdhm0JElKbc?usp=drive_link" },
+  ],
+  contact: {
+    emails: ["22113063@st.hcmuaf.edu.vn", "lehoangphuc29062004@gmail.com"],
+    phone: "0348166285",
+    linkedin: "https://www.linkedin.com/in/phúc-lê-hoàng-57915a38b",
+  },
+};
+
+window.IMAGES = IMAGES;
+window.CONTENT = CONTENT;
+</script>
+
+<!-- =========================================================================
+     APP.JS — LOGIC (đặt SAU content.js)
+     ========================================================================= -->
+<script>
+(function () {
+"use strict";
+
+var VALID_PANELS = ["ki-nang", "hoc-van", "du-an", "kinh-nghiem", "danh-gia", "hoat-dong-khac", "lien-he"];
+var currentPanel = null;
+var uidCounter = 0;
+function uid(prefix) { uidCounter += 1; return prefix + "-" + uidCounter; }
+function setText(id, value) { var el = document.getElementById(id); if (el) el.textContent = value || ""; }
+
+function bilingual(tag, vi, en, extraClass) {
+  var frag = document.createDocumentFragment();
+  var elVi = document.createElement(tag);
+  elVi.className = "text-vi" + (extraClass ? " " + extraClass : "");
+  elVi.lang = "vi"; elVi.textContent = vi || "";
+  frag.appendChild(elVi);
+  if (en) {
+    var elEn = document.createElement(tag);
+    elEn.className = "text-en" + (extraClass ? " " + extraClass : "");
+    elEn.lang = "en"; elEn.textContent = en;
+    frag.appendChild(elEn);
+  }
+  return frag;
+}
+function sectionHeading(vi, en) {
+  var h = document.createElement("h4");
+  h.appendChild(bilingual("span", vi, en));
+  return h;
+}
+function createBadge(vi, en, extraClass) {
+  var b = document.createElement("span");
+  b.className = "badge" + (extraClass ? " " + extraClass : "");
+  b.textContent = en ? vi + " / " + en : vi;
+  return b;
+}
+function createExternalButton(link) {
+  var a = document.createElement("a");
+  a.className = "btn-external";
+  a.href = link.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+  a.appendChild(bilingual("span", link.vi, link.en));
+  return a;
+}
+function getImage(label) {
+  if (label && label.src) return label.src;
+  if (window.IMAGES && typeof label === "string" && Object.prototype.hasOwnProperty.call(window.IMAGES, label)) {
+    return window.IMAGES[label].src;
+  }
+  return null;
+}
+function getLabelName(label) {
+  if (label && label.label) return label.label;
+  if (window.IMAGES && typeof label === "string" && window.IMAGES[label]) return window.IMAGES[label].label;
+  return label || "";
+}
+function createPlaceholder(label) {
+  var div = document.createElement("div");
+  div.setAttribute("role", "img"); div.setAttribute("aria-label", label);
+  div.style.cssText = "display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:var(--color-bg-alt);color:var(--muted);font-size:0.75rem;text-align:center;padding:8px;";
+  div.textContent = label;
+  return div;
+}
+function createFigure(label) {
+  var figure = document.createElement("figure");
+  var src = getImage(label);
+  var name = getLabelName(label);
+  if (src) {
+    var img = document.createElement("img");
+    img.src = src; img.alt = name; img.loading = "lazy"; img.style.cursor = "zoom-in";
+    img.addEventListener("click", function () { openLightbox(src, name); });
+    img.addEventListener("error", function () { figure.replaceChild(createPlaceholder(name), img); });
+    figure.appendChild(img);
+  } else {
+    figure.appendChild(createPlaceholder(name));
+  }
+  var caption = document.createElement("figcaption");
+  caption.textContent = name;
+  figure.appendChild(caption);
+  return figure;
+}
+
+function createShowButton(panelId) {
+  var btn = document.createElement("button");
+  btn.type = "button"; btn.className = "btn-show";
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", panelId);
+  btn.setAttribute("aria-label", "Show / Thu gọn ảnh minh chứng");
+  var vi = document.createElement("span"); vi.className = "text-vi"; vi.lang = "vi"; vi.textContent = "Show";
+  var en = document.createElement("span"); en.className = "text-en"; en.lang = "en"; en.textContent = "";
+  btn.appendChild(vi); btn.appendChild(en);
+  return btn;
+}
+function createShowPair(imageLabels) {
+  var panelId = uid("show-panel");
+  var button = createShowButton(panelId);
+  var panel = document.createElement("div");
+  panel.className = "show-panel"; panel.id = panelId;
+  panel.dataset.open = "false";
+  panel.dataset.images = JSON.stringify(imageLabels || []);
+  var grid = document.createElement("div"); grid.className = "show-grid";
+  panel.appendChild(grid);
+  return { button: button, panel: panel };
+}
+function toggleShow(button) {
+  var panel = document.getElementById(button.getAttribute("aria-controls"));
+  if (!panel) return;
+  var willOpen = panel.dataset.open !== "true";
+  panel.dataset.open = willOpen ? "true" : "false";
+  button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  var vi = button.querySelector(".text-vi");
+  var en = button.querySelector(".text-en");
+  if (willOpen) { if (vi) vi.textContent = "Thu gọn"; if (en) en.textContent = "Collapse"; }
+  else { if (vi) vi.textContent = "Show"; if (en) en.textContent = ""; }
+  if (willOpen && panel.dataset.rendered !== "true") {
+    var grid = panel.querySelector(".show-grid");
+    var labels = [];
+    try { labels = JSON.parse(panel.dataset.images || "[]"); } catch (e) { labels = []; }
+    labels.forEach(function (label) { grid.appendChild(createFigure(label)); });
+    panel.dataset.rendered = "true";
+  }
+}
+
+var lightboxEl, lightboxImgEl, lightboxCaptionEl, lastFocusBeforeLightbox;
+function openLightbox(src, caption) {
+  if (!lightboxEl) return;
+  lastFocusBeforeLightbox = document.activeElement;
+  lightboxImgEl.src = src; lightboxImgEl.alt = caption;
+  lightboxCaptionEl.textContent = caption;
+  lightboxEl.hidden = false;
+  document.body.style.overflow = "hidden";
+  var closeBtn = lightboxEl.querySelector("[data-action='close-lightbox']");
+  if (closeBtn) closeBtn.focus();
+}
+function closeLightbox() {
+  if (!lightboxEl || lightboxEl.hidden) return;
+  lightboxEl.hidden = true; lightboxImgEl.src = "";
+  document.body.style.overflow = "";
+  if (lastFocusBeforeLightbox && typeof lastFocusBeforeLightbox.focus === "function") lastFocusBeforeLightbox.focus();
+}
+function initLightbox() {
+  lightboxEl = document.getElementById("lightbox");
+  if (!lightboxEl) return;
+  lightboxImgEl = document.getElementById("lightbox-image");
+  lightboxCaptionEl = document.getElementById("lightbox-caption");
+  lightboxEl.addEventListener("click", function (e) { if (e.target === lightboxEl) closeLightbox(); });
+  var closeBtn = lightboxEl.querySelector("[data-action='close-lightbox']");
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lightboxEl.hidden) closeLightbox(); });
+  var touchStartY = null;
+  lightboxEl.addEventListener("touchstart", function (e) { touchStartY = e.touches[0].clientY; }, { passive: true });
+  lightboxEl.addEventListener("touchend", function (e) {
+    if (touchStartY === null) return;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dy) > 80) closeLightbox();
+    touchStartY = null;
+  }, { passive: true });
+}
+
+function renderHero(content) {
+  var hero = content && content.profile; if (!hero) return;
+  setText("hero-name-vi", hero.name.vi);
+  setText("hero-name-en", hero.name.en);
+  setText("hero-motto-vi", hero.motto.vi);
+  setText("hero-motto-en", hero.motto.en);
+  setText("hero-story-vi", hero.story.vi);
+  setText("hero-story-en", hero.story.en);
+  var img = document.getElementById("portrait-img");
+  if (hero.portrait && img) {
+    img.src = hero.portrait; img.alt = hero.name.vi || "";
+    img.addEventListener("error", showPortraitPlaceholder);
+  } else { showPortraitPlaceholder(); }
+}
+function showPortraitPlaceholder() {
+  var wrap = document.querySelector(".hero__portrait");
+  var img = document.getElementById("portrait-img");
+  if (!wrap) return;
+  if (img && img.parentNode === wrap) wrap.removeChild(img);
+  if (wrap.querySelector(".hero__portrait-placeholder")) return;
+  var ph = document.createElement("div");
+  ph.className = "hero__portrait-img hero__portrait-placeholder";
+  ph.style.cssText = "display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;";
+  ph.textContent = "[Chèn Ảnh chân dung]";
+  wrap.appendChild(ph);
+}
+
+function buildLabeledRow(item) {
+  var frag = document.createDocumentFragment();
+  var row = document.createElement("div"); row.className = "skill-row";
+  var textWrap = document.createElement("div");
+  textWrap.appendChild(bilingual("span", item.vi, item.en));
+  row.appendChild(textWrap);
+  var actions = document.createElement("div");
+  actions.style.cssText = "display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;";
+  (item.externalLinks || item.links || []).forEach(function (link) { actions.appendChild(createExternalButton(link)); });
+  var pair = null;
+  if (item.images && item.images.length) {
+    pair = createShowPair(item.images);
+    actions.appendChild(pair.button);
+  }
+  if (actions.childNodes.length) row.appendChild(actions);
+  frag.appendChild(row);
+  if (pair) frag.appendChild(pair.panel);
+  return frag;
+}
+function renderSkillsChuyenMon(list) {
+  var el = document.getElementById("skills-chuyen-mon-list");
+  if (!el || !list) return; el.innerHTML = "";
+  list.forEach(function (item) { el.appendChild(createBadge(item.vi, item.en)); });
+}
+function renderSkillsMem(list, thietKe) {
+  var el = document.getElementById("skills-mem-list");
+  if (!el || !list) return; el.innerHTML = "";
+  list.forEach(function (item) { el.appendChild(buildLabeledRow(item)); });
+  if (thietKe) el.appendChild(buildLabeledRow(thietKe));
+}
+function renderSkillsTool(list) {
+  var el = document.getElementById("skills-tool-list");
+  if (!el || !list) return; el.innerHTML = "";
+  list.forEach(function (tool) {
+    var item = document.createElement("div"); item.className = "tool-item";
+    var img = document.createElement("img");
+    img.loading = "lazy"; img.alt = tool.name;
+    if (tool.src) { img.src = tool.src; } else { img.style.display = "none"; }
+    img.addEventListener("error", function () { img.style.display = "none"; });
+    item.appendChild(img);
+    var span = document.createElement("span"); span.textContent = tool.name;
+    item.appendChild(span);
+    el.appendChild(item);
+  });
+}
+
+function renderGPA(gpa) {
+  var el = document.getElementById("gpa-block");
+  if (!el || !gpa) return; el.innerHTML = "";
+  var num = document.createElement("div"); num.className = "gpa-number"; num.textContent = gpa.value;
+  el.appendChild(num);
+  var label = document.createElement("div");
+  label.appendChild(bilingual("span", "GPA", "GPA"));
+  el.appendChild(label);
+  if (gpa.link) {
+    el.appendChild(createExternalButton({ vi: "Show minh chứng", en: "View proof", url: gpa.link }));
+  }
+}
+function renderShowBlockInto(elId, data) {
+  var el = document.getElementById(elId);
+  if (!el || !data) return; el.innerHTML = "";
+  el.appendChild(buildLabeledRow(data));
+}
+
+function createProjectCard(p) {
+  var card = document.createElement("article"); card.className = "project-card";
+  var badges = document.createElement("div"); badges.className = "project-card__badges";
+  if (p.role && p.role.vi) badges.appendChild(createBadge(p.role.vi, p.role.en, "badge--role"));
+  (p.awards || []).forEach(function (a) { badges.appendChild(createBadge(a.vi, a.en, "badge--award")); });
+  if (badges.childNodes.length) card.appendChild(badges);
+  var name = document.createElement("h3"); name.className = "project-card__name";
+  name.appendChild(bilingual("span", p.name.vi, p.name.en));
+  card.appendChild(name);
+  if (p.metrics && p.metrics.length) {
+    var metricsWrap = document.createElement("div"); metricsWrap.className = "project-card__metrics";
+    p.metrics.forEach(function (m) {
+      var chip = document.createElement("div"); chip.className = "project-card__metric";
+      var strong = document.createElement("strong"); strong.textContent = m.value;
+      chip.appendChild(strong);
+      var lbl = document.createElement("span"); lbl.textContent = m.label.vi;
+      chip.appendChild(lbl);
+      metricsWrap.appendChild(chip);
+    });
+    card.appendChild(metricsWrap);
+  }
+  if (p.links && p.links.length) {
+    var linksWrap = document.createElement("div"); linksWrap.className = "project-card__links";
+    p.links.forEach(function (l) { linksWrap.appendChild(createExternalButton(l)); });
+    card.appendChild(linksWrap);
+  }
+  var detailId = uid("project-detail");
+  var toggleBtn = document.createElement("button");
+  toggleBtn.type = "button"; toggleBtn.className = "btn-outline project-card__toggle";
+  toggleBtn.setAttribute("aria-expanded", "false");
+  toggleBtn.setAttribute("aria-controls", detailId);
+  toggleBtn.dataset.role = "project-toggle";
+  toggleBtn.appendChild(bilingual("span", "Xem chi tiết", "View details"));
+  card.appendChild(toggleBtn);
+  var detail = document.createElement("div");
+  detail.className = "project-card__detail"; detail.id = detailId;
+  detail.dataset.open = "false";
+  if (p.objective && p.objective.vi) {
+    detail.appendChild(sectionHeading("Mục tiêu", "Objective"));
+    detail.appendChild(bilingual("p", p.objective.vi, p.objective.en));
+  }
+  detail.appendChild(sectionHeading("Quy trình thực hiện", "Process"));
+  if (p.process) {
+    if (p.process.intro) detail.appendChild(bilingual("p", p.process.intro.vi, p.process.intro.en));
+    if (p.process.type === "steps" && p.process.steps && p.process.steps.length) {
+      var ol = document.createElement("ol"); ol.className = "project-steps";
+      p.process.steps.forEach(function (step) {
+        var li = document.createElement("li");
+        li.appendChild(bilingual("span", step.vi, step.en));
+        ol.appendChild(li);
+      });
+      detail.appendChild(ol);
+    } else if (p.process.type === "text" || p.process.vi) {
+      detail.appendChild(bilingual("p", p.process.vi, p.process.en));
+    }
+  }
+  if (p.result && p.result.vi) {
+    detail.appendChild(sectionHeading("Kết quả", "Result"));
+    detail.appendChild(bilingual("p", p.result.vi, p.result.en));
+  }
+  if (p.images && p.images.length) {
+    var pair = createShowPair(p.images);
+    detail.appendChild(pair.button);
+    detail.appendChild(pair.panel);
+  }
+  card.appendChild(detail);
+  return card;
+}
+function renderProjects(projects) {
+  if (!projects) return;
+  var nckhEl = document.getElementById("group-nckh");
+  var startupEl = document.getElementById("group-startup");
+  if (nckhEl) { nckhEl.innerHTML = ""; (projects.nckh || []).forEach(function (p) { nckhEl.appendChild(createProjectCard(p)); }); }
+  if (startupEl) { startupEl.innerHTML = ""; (projects.startup || []).forEach(function (p) { startupEl.appendChild(createProjectCard(p)); }); }
+}
+function handleProjectToggle(btn) {
+  var detail = document.getElementById(btn.getAttribute("aria-controls"));
+  if (!detail) return;
+  var willOpen = detail.dataset.open !== "true";
+  detail.dataset.open = willOpen ? "true" : "false";
+  btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  var vi = btn.querySelector(".text-vi"); var en = btn.querySelector(".text-en");
+  if (willOpen) { if (vi) vi.textContent = "Thu gọn"; if (en) en.textContent = "Collapse"; }
+  else { if (vi) vi.textContent = "Xem chi tiết"; if (en) en.textContent = "View details"; }
+}
+
+function renderTimelineBranch(containerId, items, noteObj) {
+  var el = document.getElementById(containerId);
+  if (!el || !items) return; el.innerHTML = "";
+  items.forEach(function (item) {
+    var li = document.createElement("li"); li.className = "timeline__item";
+    var year = document.createElement("div"); year.className = "timeline__year"; year.textContent = item.year;
+    li.appendChild(year);
+    var org = document.createElement("div"); org.className = "timeline__org";
+    org.appendChild(bilingual("span", item.org.vi, item.org.en));
+    li.appendChild(org);
+    if (item.role !== undefined && item.role !== null) {
+      var role = document.createElement("div"); role.className = "timeline__role";
+      if (item.role && item.role.vi) role.appendChild(bilingual("span", item.role.vi, item.role.en));
+      li.appendChild(role);
+    }
+    var actions = document.createElement("div"); actions.className = "timeline__actions";
+    if (item.resultLink) actions.appendChild(createExternalButton(item.resultLink));
+    var pair = null;
+    if (item.images && item.images.length) {
+      pair = createShowPair(item.images);
+      actions.appendChild(pair.button);
+    }
+    if (actions.childNodes.length) li.appendChild(actions);
+    if (pair) li.appendChild(pair.panel);
+    el.appendChild(li);
+  });
+  if (noteObj) {
+    var noteLi = document.createElement("li"); noteLi.className = "timeline__note";
+    noteLi.appendChild(bilingual("p", noteObj.vi, noteObj.en));
+    el.appendChild(noteLi);
+  }
+}
+function renderTimeline(data) {
+  if (!data) return;
+  renderTimelineBranch("branch-ngoai-khoa", data.ngoaiKhoa);
+  renderTimelineBranch("branch-lam-viec", data.lamViec, data.labContactNote);
+}
+
+var TESTIMONIAL_CLAMP_THRESHOLD = 260;
+function renderTestimonialGroup(containerId, items) {
+  var el = document.getElementById(containerId);
+  if (!el || !items) return; el.innerHTML = "";
+  items.forEach(function (t) {
+    var card = document.createElement("div"); card.className = "testimonial-card";
+    var author = document.createElement("div"); author.className = "testimonial-card__author";
+    author.textContent = t.author.vi;
+    card.appendChild(author);
+    if (t.org) {
+      var role = document.createElement("div"); role.className = "testimonial-card__role";
+      role.appendChild(bilingual("span", t.org.vi, t.org.en));
+      card.appendChild(role);
+    }
+    var content = document.createElement("p"); content.className = "testimonial-card__content";
+    content.textContent = t.content.vi;
+    var isLong = t.content.vi && t.content.vi.length > TESTIMONIAL_CLAMP_THRESHOLD;
+    if (isLong) {
+      content.style.cssText = "display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;";
+      content.dataset.clamped = "true";
+    }
+    card.appendChild(content);
+    if (isLong) {
+      var expandBtn = document.createElement("button");
+      expandBtn.type = "button"; expandBtn.className = "testimonial-card__expand btn-outline";
+      expandBtn.dataset.role = "testimonial-expand";
+      expandBtn.appendChild(bilingual("span", "Xem thêm", "Read more"));
+      card.appendChild(expandBtn);
+    }
+    if (t.verify) {
+      var verify = document.createElement("div"); verify.className = "testimonial-card__verify";
+      verify.textContent = t.verify.vi;
+      card.appendChild(verify);
+    }
+    if (t.link) {
+      card.appendChild(createExternalButton(t.link));
+    }
+    if (t.images && t.images.length) {
+      var pair = createShowPair(t.images);
+      card.appendChild(pair.button); card.appendChild(pair.panel);
+    }
+    el.appendChild(card);
+  });
+}
+function renderTestimonials(data) {
+  if (!data) return;
+  renderTestimonialGroup("testimonials-khach-hang-list", data.khachHang);
+  renderTestimonialGroup("testimonials-dong-nghiep-list", data.dongNghiep);
+  renderTestimonialGroup("testimonials-cap-tren-list", data.capTren);
+}
+function handleTestimonialExpand(btn) {
+  var card = btn.closest(".testimonial-card");
+  if (!card) return;
+  var content = card.querySelector(".testimonial-card__content");
+  if (!content) return;
+  var isClamped = content.dataset.clamped !== "false";
+  var vi = btn.querySelector(".text-vi"); var en = btn.querySelector(".text-en");
+  if (isClamped) {
+    content.style.cssText = "display:block;overflow:visible;";
+    content.dataset.clamped = "false";
+    if (vi) vi.textContent = "Thu gọn"; if (en) en.textContent = "Collapse";
+  } else {
+    content.style.cssText = "display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;";
+    content.dataset.clamped = "true";
+    if (vi) vi.textContent = "Xem thêm"; if (en) en.textContent = "Read more";
+  }
+}
+
+function renderHoatDongKhac(activities, driveLinks) {
+  var list = document.getElementById("hoat-dong-khac-list");
+  if (list && activities) {
+    list.innerHTML = "";
+    activities.forEach(function (item) {
+      var row = document.createElement("div"); row.className = "activity-row";
+      var text = document.createElement("div");
+      text.appendChild(bilingual("span", item.vi, item.en));
+      row.appendChild(text);
+      var pair = null;
+      if (item.images && item.images.length) {
+        pair = createShowPair(item.images);
+        row.appendChild(pair.button);
+      }
+      list.appendChild(row);
+      if (pair) list.appendChild(pair.panel);
+    });
+  }
+  var driveWrap = document.getElementById("hoat-dong-khac-drive-links");
+  if (driveWrap && driveLinks) {
+    driveWrap.innerHTML = "";
+    driveLinks.forEach(function (l) { driveWrap.appendChild(createExternalButton(l)); });
+  }
+}
+
+function renderContact(contact) {
+  var el = document.getElementById("lien-he-list");
+  if (!el || !contact) return; el.innerHTML = "";
+  var wrap = document.createElement("div"); wrap.className = "contact-list";
+  contact.emails.forEach(function (email) {
+    var a = document.createElement("a");
+    a.className = "contact-item"; a.href = "mailto:" + email;
+    var icon = document.createElement("span"); icon.className = "contact-item__icon";
+    icon.setAttribute("aria-hidden", "true"); icon.textContent = "✉";
+    a.appendChild(icon);
+    var text = document.createElement("span"); text.textContent = email;
+    a.appendChild(text);
+    wrap.appendChild(a);
+  });
+  var phoneA = document.createElement("a");
+  phoneA.className = "contact-item"; phoneA.href = "tel:" + contact.phone;
+  var phoneIcon = document.createElement("span"); phoneIcon.className = "contact-item__icon";
+  phoneIcon.setAttribute("aria-hidden", "true"); phoneIcon.textContent = "☎";
+  phoneA.appendChild(phoneIcon);
+  var phoneText = document.createElement("span"); phoneText.textContent = contact.phone;
+  phoneA.appendChild(phoneText);
+  wrap.appendChild(phoneA);
+  var linkedinA = document.createElement("a");
+  linkedinA.className = "contact-item"; linkedinA.href = contact.linkedin;
+  linkedinA.target = "_blank"; linkedinA.rel = "noopener noreferrer";
+  var liIcon = document.createElement("span"); liIcon.className = "contact-item__icon";
+  liIcon.setAttribute("aria-hidden", "true"); liIcon.textContent = "in";
+  linkedinA.appendChild(liIcon);
+  var liText = document.createElement("span"); liText.textContent = "LinkedIn";
+  linkedinA.appendChild(liText);
+  wrap.appendChild(linkedinA);
+  el.appendChild(wrap);
+}
+
+function renderAll() {
+  var c = window.CONTENT; if (!c) return;
+  renderHero(c);
+  renderGPA(c.education.gpa);
+  renderShowBlockInto("hocbong-block", c.education.hocBong);
+  renderShowBlockInto("chungchi-block", c.education.chungChi);
+  renderSkillsChuyenMon(c.skills.chuyenMon);
+  renderSkillsMem(c.skills.mem, c.skills.thietKe);
+  renderSkillsTool(c.skills.tool);
+  renderProjects(c.projects);
+  renderTimeline(c.experience);
+  renderTestimonials(c.testimonials);
+  renderHoatDongKhac(c.activities, c.activityDriveLinks);
+  renderContact(c.contact);
+}
+
+function activateTab(tabs, selected) {
+  tabs.forEach(function (tab) {
+    var isSelected = tab === selected;
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+    var panel = document.getElementById(tab.getAttribute("aria-controls"));
+    if (panel) panel.hidden = !isSelected;
+  });
+}
+function initTabs(tablistEl) {
+  var tabs = Array.prototype.slice.call(tablistEl.querySelectorAll("[role='tab']"));
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () { activateTab(tabs, tab); });
+    tab.addEventListener("keydown", function (e) {
+      var idx = tabs.indexOf(tab); var newIdx = null;
+      if (e.key === "ArrowRight") newIdx = (idx + 1) % tabs.length;
+      if (e.key === "ArrowLeft") newIdx = (idx - 1 + tabs.length) % tabs.length;
+      if (newIdx !== null) { e.preventDefault(); tabs[newIdx].focus(); activateTab(tabs, tabs[newIdx]); }
+    });
+  });
+}
+
+function activatePanel(target) {
+  if (VALID_PANELS.indexOf(target) === -1) { activateHome(); return; }
+  currentPanel = target;
+  document.querySelectorAll(".panel").forEach(function (p) { p.hidden = p.id !== target; });
+  var hive = document.getElementById("hive-nav");
+  if (hive) {
+    hive.setAttribute("data-active", "true");
+    hive.querySelectorAll(".hive__cell").forEach(function (cell) {
+      cell.setAttribute("aria-current", cell.getAttribute("data-target") === target ? "true" : "false");
+    });
+  }
+  var hiveMini = document.getElementById("hive-mini");
+  if (hiveMini) {
+    hiveMini.hidden = false;
+    hiveMini.querySelectorAll(".hive-mini__cell").forEach(function (cell) {
+      cell.setAttribute("aria-current", cell.getAttribute("data-target") === target ? "true" : "false");
+    });
+  }
+  var panelEl = document.getElementById(target);
+  if (panelEl) {
+    panelEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    var heading = document.getElementById(target + "-heading");
+    if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
+  }
+}
+function activateHome() {
+  currentPanel = null;
+  document.querySelectorAll(".panel").forEach(function (p) { p.hidden = true; });
+  var hive = document.getElementById("hive-nav");
+  if (hive) {
+    hive.setAttribute("data-active", "false");
+    hive.querySelectorAll(".hive__cell").forEach(function (cell) { cell.setAttribute("aria-current", "false"); });
+  }
+  var hiveMini = document.getElementById("hive-mini");
+  if (hiveMini) {
+    hiveMini.hidden = true;
+    hiveMini.querySelectorAll(".hive-mini__cell").forEach(function (cell) { cell.setAttribute("aria-current", "false"); });
+  }
+  var heroEl = document.getElementById("trang-chu");
+  if (heroEl) heroEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function navigateTo(target) {
+  if (target) {
+    if (location.hash.replace("#", "") !== target) { location.hash = target; }
+    else { activatePanel(target); }
+  } else if (location.hash) {
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+    activateHome();
+  } else { activateHome(); }
+}
+function syncFromHash() {
+  var id = location.hash.replace("#", "");
+  if (VALID_PANELS.indexOf(id) !== -1) activatePanel(id);
+  else activateHome();
+}
+function initHiveNav() {
+  var hive = document.getElementById("hive-nav");
+  if (hive) {
+    hive.addEventListener("click", function (e) {
+      var cell = e.target.closest(".hive__cell");
+      if (!cell) return;
+      var target = cell.getAttribute("data-target");
+      if (target) navigateTo(target);
+    });
+  }
+  var hiveMini = document.getElementById("hive-mini");
+  if (hiveMini) {
+    hiveMini.addEventListener("click", function (e) {
+      var homeBtn = e.target.closest("[data-action='go-home']");
+      if (homeBtn) { navigateTo(null); return; }
+      var cell = e.target.closest(".hive-mini__cell");
+      if (cell) {
+        var target = cell.getAttribute("data-target");
+        if (target === currentPanel) navigateTo(null);
+        else if (target) navigateTo(target);
+      }
+    });
+  }
+  document.querySelectorAll("[data-action='close-panel']").forEach(function (btn) {
+    btn.addEventListener("click", function () { navigateTo(null); });
+  });
+  window.addEventListener("hashchange", syncFromHash);
+}
+
+function initDelegatedEvents() {
+  document.addEventListener("click", function (e) {
+    var showBtn = e.target.closest(".btn-show");
+    if (showBtn) { toggleShow(showBtn); return; }
+    var projectToggle = e.target.closest("[data-role='project-toggle']");
+    if (projectToggle) { handleProjectToggle(projectToggle); return; }
+    var testimonialExpand = e.target.closest("[data-role='testimonial-expand']");
+    if (testimonialExpand) { handleTestimonialExpand(testimonialExpand); return; }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderAll();
+  initLightbox();
+  document.querySelectorAll(".tabs").forEach(initTabs);
+  initDelegatedEvents();
+  initHiveNav();
+  syncFromHash();
+});
+})();
+</script>
+</body>
+</html>
